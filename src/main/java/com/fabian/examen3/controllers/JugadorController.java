@@ -38,7 +38,7 @@ public class JugadorController {
     }
 
     @GetMapping(path = "/getAll")
-    public List getAll(){
+    public List<Jugador> getAll(){
         return service.listarJugadores();
     }
 
