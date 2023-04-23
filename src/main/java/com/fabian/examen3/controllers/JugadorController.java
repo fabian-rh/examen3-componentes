@@ -17,7 +17,7 @@ public class JugadorController {
     @Autowired
     private JugadorService service;
 
-    @PostMapping
+    @PostMapping(path = "/create")
     public ResponseEntity create(@RequestBody Jugador j){
         try{
             return ResponseEntity.status(HttpStatus.CREATED).body(service.insertarJugador(j));
@@ -27,7 +27,7 @@ public class JugadorController {
         return ResponseEntity.notFound().build();
     }
 
-    @PutMapping
+    @PutMapping(path = "/actualizar")
     public ResponseEntity actualizar(@RequestParam int id,@RequestBody Jugador j){
         try{
             return ResponseEntity.status(HttpStatus.OK).body(service.actualizarJugador(id, j));
